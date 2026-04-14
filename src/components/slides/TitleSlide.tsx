@@ -62,9 +62,7 @@ export default function TitleSlide() {
           </p>
         </div>
         <div className="animate-slide-in-delay-3 mt-16">
-          <p className="text-sm tracking-widest text-[hsl(var(--muted-foreground))] uppercase">
-            Türk mitolojisindeki şefkat ve koruma tanrıçası Umay'dan ilham alındı
-          </p>
+          <p className="text-sm tracking-widest text-[hsl(var(--muted-foreground))] uppercase">U may heal together.</p>
         </div>
       </div>
     </SlideLayout>
