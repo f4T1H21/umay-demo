@@ -2,8 +2,8 @@ import { supabase } from '@/lib/supabase';
 import { useState } from 'react';
 
 const SPEAKERS = ['Partner A', 'Partner B', 'System'] as const;
-const TRIPWIRES = ['Loop', 'Missed Drop', 'Escalation', 'Stonewall'] as const;
-const DECISIONS = ['observe', 'observe', 'observe', 'interrupt'] as const;
+const TRIPWIRES = ['the_loop', 'the_missed_drop', 'the_escalation', 'the_stonewall'] as const;
+const DECISIONS = ['null', 'null', 'null', 'interrupt'] as const;
 
 const TRANSCRIPTS = [
   "I feel like we keep going in circles about this.",
@@ -25,7 +25,11 @@ const SCRATCHPADS = [
 
 let callIndex = 0;
 
-export default function SimulateButton() {
+interface SimulateButtonProps {
+  sessionId?: string | null;
+}
+
+export default function SimulateButton({ sessionId }: SimulateButtonProps) {
   const [loading, setLoading] = useState(false);
 
   const handleClick = async () => {
@@ -37,13 +41,16 @@ export default function SimulateButton() {
     const confidence = decision === 'interrupt' ? 0.85 + Math.random() * 0.15 : 0.3 + Math.random() * 0.5;
 
     await supabase.from('therapy_logs').insert({
-      session_id: 'demo-session-001',
+      session_id: sessionId ?? 'demo_session_001',
       speaker,
       raw_transcript: TRANSCRIPTS[Math.floor(Math.random() * TRANSCRIPTS.length)],
       ai_analysis: {
+        event_type: 'turn_final',
+        chunk_index: null,
         confidence_score: parseFloat(confidence.toFixed(2)),
         detected_tripwire: tripwire,
         action_decision: decision,
+        reasoning_summary: SCRATCHPADS[i],
         chain_of_thought_scratchpad: SCRATCHPADS[i],
       },
     });

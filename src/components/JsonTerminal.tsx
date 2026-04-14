@@ -11,11 +11,13 @@ export default function JsonTerminal({ logs }: Props) {
   const queueRef = useRef<string[]>([]);
   const typingRef = useRef(false);
 
-  // Queue new scratchpads
+  // Queue new reasoning updates
   useEffect(() => {
     if (logs.length === 0) return;
     const latest = logs[logs.length - 1];
-    const text = latest.ai_analysis?.chain_of_thought_scratchpad;
+    const text =
+      latest.ai_analysis?.reasoning_summary ??
+      latest.ai_analysis?.chain_of_thought_scratchpad;
     if (text) {
       queueRef.current.push(`\n> [${new Date(latest.created_at).toLocaleTimeString()}]\n${text}\n`);
       processQueue();
@@ -46,7 +48,7 @@ export default function JsonTerminal({ logs }: Props) {
   return (
     <div className="flex flex-col h-full">
       <h2 className="font-sans text-sm uppercase tracking-widest text-zinc-500 mb-3">
-        AI Chain-of-Thought
+        AI Reasoning Stream
       </h2>
       <div className="flex-1 overflow-y-auto bg-black/60 rounded-lg p-4 font-mono text-xs text-emerald-400 leading-relaxed whitespace-pre-wrap">
         {displayedText || <span className="text-zinc-600 italic">Awaiting AI reasoning…</span>}
