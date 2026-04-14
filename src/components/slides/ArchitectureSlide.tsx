@@ -5,36 +5,36 @@ export default function ArchitectureSlide() {
     <SlideLayout className="bg-gradient-to-br from-[hsl(30,20%,4%)] to-[hsl(30,15%,8%)] flex items-center">
       <div className="w-full px-16 py-12">
         <div className="animate-slide-in mb-10">
-          <p className="text-sm tracking-[0.3em] uppercase text-[hsl(var(--slide-amber))] mb-4">Architecture</p>
+          <p className="text-sm tracking-[0.3em] uppercase text-[hsl(var(--slide-amber))] mb-4">Mimari</p>
           <h2 className="font-display text-5xl font-bold text-[hsl(var(--slide-cream))] leading-tight">
-            Zero-Latency Interventions
+            Sıfır Gecikme Müdahaleler
           </h2>
         </div>
 
         <div className="animate-slide-in-delay-1 grid grid-cols-4 gap-4">
           {[
             {
-              layer: 'Frontend',
+              layer: 'Ön Yüz',
               tech: 'React / Tailwind',
-              desc: 'Split-screen PTT interface with real-time state indicators',
+              desc: 'Gerçek zamanlı durum göstergeleriyle bölünmüş ekran bas-konuş arayüzü',
               color: 'var(--slide-sage)',
             },
             {
-              layer: 'Audio Pipeline',
+              layer: 'Ses Hattı',
               tech: 'Web Audio API + Fal.ai',
-              desc: 'Decibel monitoring via Web Audio API, WebSocket streaming to Fal.ai for real-time STT',
+              desc: 'Web Audio ile desibel izleme, WebSocket ile gerçek zamanlı konuşma-metin dönüşümü',
               color: 'var(--slide-amber)',
             },
             {
-              layer: 'Backend',
+              layer: 'Arka Uç',
               tech: 'Supabase + OpenAI',
-              desc: 'Realtime Database & Edge Functions running LLM evaluations, pushing state changes in <50ms',
+              desc: 'Gerçek zamanlı veritabanı ve Edge fonksiyonları, <50ms altında durum değişikliği',
               color: 'var(--slide-sage)',
             },
             {
-              layer: 'Safety Layer',
-              tech: 'Local Regex',
-              desc: 'Zero-latency toxic word detection runs client-side — no network round-trip for 3-Strike Protocol',
+              layer: 'Güvenlik Katmanı',
+              tech: 'Yerel Regex',
+              desc: 'Sıfır gecikmeli toksik kelime tespiti istemci tarafında çalışır — ağ gecikmesi yok',
               color: 'var(--slide-amber)',
             },
           ].map(({ layer, tech, desc, color }, i) => (
@@ -47,17 +47,16 @@ export default function ArchitectureSlide() {
           ))}
         </div>
 
-        {/* Flow diagram */}
         <div className="animate-slide-in-delay-3 mt-10 flex items-center justify-center gap-3 text-xs font-mono text-[hsl(var(--muted-foreground))]">
-          <span className="px-3 py-1.5 rounded bg-[hsl(var(--slide-sage)/0.1)] text-[hsl(var(--slide-sage))]">Mic Input</span>
+          <span className="px-3 py-1.5 rounded bg-[hsl(var(--slide-sage)/0.1)] text-[hsl(var(--slide-sage))]">Mikrofon</span>
           <span>→</span>
           <span className="px-3 py-1.5 rounded bg-[hsl(var(--slide-amber)/0.1)] text-[hsl(var(--slide-amber))]">Web Audio</span>
           <span>→</span>
           <span className="px-3 py-1.5 rounded bg-[hsl(var(--slide-sage)/0.1)] text-[hsl(var(--slide-sage))]">STT (Fal.ai)</span>
           <span>→</span>
-          <span className="px-3 py-1.5 rounded bg-[hsl(var(--slide-amber)/0.1)] text-[hsl(var(--slide-amber))]">LLM Judge</span>
+          <span className="px-3 py-1.5 rounded bg-[hsl(var(--slide-amber)/0.1)] text-[hsl(var(--slide-amber))]">LLM Hakem</span>
           <span>→</span>
-          <span className="px-3 py-1.5 rounded bg-[hsl(var(--slide-sage)/0.1)] text-[hsl(var(--slide-sage))]">State Push &lt;50ms</span>
+          <span className="px-3 py-1.5 rounded bg-[hsl(var(--slide-sage)/0.1)] text-[hsl(var(--slide-sage))]">Durum &lt;50ms</span>
         </div>
       </div>
     </SlideLayout>

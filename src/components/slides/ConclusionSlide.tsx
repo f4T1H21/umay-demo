@@ -6,8 +6,8 @@ export default function ConclusionSlide() {
       <div className="text-center max-w-3xl px-16">
         <div className="animate-slide-in">
           <h2 className="font-display text-5xl font-bold text-[hsl(var(--slide-cream))] leading-tight mb-6">
-            Conflict is natural.<br />
-            <span className="text-[hsl(var(--slide-amber))]">Destruction is a choice.</span>
+            Çatışma doğaldır.<br />
+            <span className="text-[hsl(var(--slide-amber))]">Yıkım bir tercihtir.</span>
           </h2>
         </div>
 
@@ -17,7 +17,7 @@ export default function ConclusionSlide() {
 
         <div className="animate-slide-in-delay-2">
           <p className="text-xl text-[hsl(var(--muted-foreground))] leading-relaxed mb-12">
-            Umay is the AI safe space that protects the core of compassion.
+            Umay, şefkatin özünü koruyan yapay zekâ güvenli alanıdır.
           </p>
         </div>
 
@@ -26,13 +26,13 @@ export default function ConclusionSlide() {
             Umay
           </h1>
           <p className="text-lg tracking-[0.15em] text-[hsl(var(--slide-sage))]">
-            Protect your connection.
+            Bağınızı koruyun.
           </p>
         </div>
 
         <div className="animate-slide-in-delay-4 mt-16">
           <p className="text-xs tracking-[0.3em] uppercase text-[hsl(var(--muted-foreground))]">
-            Thank you · Q&A
+            Teşekkürler · Soru & Cevap
           </p>
         </div>
       </div>
