@@ -5,9 +5,7 @@ export default function TitleSlide() {
     <SlideLayout className="bg-gradient-to-br from-[hsl(220,20%,6%)] via-[hsl(220,15%,10%)] to-[hsl(210,30%,10%)] flex items-center justify-center">
       <div className="relative z-10 text-center px-16 max-w-5xl">
         <div className="animate-slide-in">
-          <h1 className="font-sans text-[40px] font-bold leading-tight text-[hsl(var(--slide-text))]">
-            U May Heal Together
-          </h1>
+          <h1 className="font-sans text-[40px] font-bold leading-tight text-[hsl(var(--slide-text))]">Umay</h1>
           <p className="text-[24px] font-semibold text-[hsl(var(--slide-primary))] mt-2">
             Yapay Zeka Destekli Çift Terapisi Arayüzü
           </p>
@@ -17,11 +15,13 @@ export default function TitleSlide() {
         </div>
         <div className="animate-slide-in-delay-2">
           <p className="text-[18px] text-[hsl(var(--slide-muted))] leading-relaxed max-w-3xl mx-auto">
-            Uzun süreli ilişkilerde erişilebilir, bilimsel ve veri odaklı dijital terapi mimarisi.
+            Uzun süreli ilişkilerde erişilebilir, bilimsel ve veri odaklı dijital terapi mimarisi
           </p>
         </div>
         <div className="animate-slide-in-delay-3 mt-12">
-          <p className="text-sm font-semibold tracking-[0.15em] text-[hsl(var(--slide-accent))] uppercase">Umay</p>
+          <p className="text-sm font-semibold tracking-[0.15em] text-[hsl(var(--slide-accent))] uppercase">
+            U may heal together
+          </p>
         </div>
       </div>
     </SlideLayout>
