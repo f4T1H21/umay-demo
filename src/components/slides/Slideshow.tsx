@@ -75,7 +75,7 @@ export default function Slideshow({ children, onExitPresentation }: Props) {
           {current + 1} / {total}
         </p>
 
-        {/* Nav arrows */}
+        {/* Nav arrows & fullscreen */}
         <div className="flex items-center gap-2">
           <button
             onClick={prev}
@@ -90,6 +90,13 @@ export default function Slideshow({ children, onExitPresentation }: Props) {
             className="px-3 py-1 rounded text-xs text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--slide-cream))] disabled:opacity-20 transition-colors"
           >
             →
+          </button>
+          <button
+            onClick={toggleFullscreen}
+            className="px-3 py-1 rounded text-xs text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--slide-cream))] transition-colors ml-2"
+            title="Fullscreen (F5)"
+          >
+            ⛶
           </button>
         </div>
       </div>
