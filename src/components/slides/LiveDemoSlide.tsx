@@ -9,13 +9,13 @@ export default function LiveDemoSlide({ onLaunchDemo }: Props) {
     <SlideLayout className="bg-gradient-to-br from-[hsl(30,20%,4%)] via-[hsl(142,15%,6%)] to-[hsl(30,20%,4%)] flex items-center justify-center">
       <div className="text-center max-w-2xl px-16">
         <div className="animate-slide-in">
-          <p className="text-sm tracking-[0.3em] uppercase text-[hsl(var(--slide-sage))] mb-6">Live Demonstration</p>
+          <p className="text-sm tracking-[0.3em] uppercase text-[hsl(var(--slide-sage))] mb-6">Canlı Gösterim</p>
           <h2 className="font-display text-6xl font-bold text-[hsl(var(--slide-cream))] leading-tight mb-6">
-            Process Observer
+            Süreç Gözlemcisi
           </h2>
           <p className="text-[hsl(var(--muted-foreground))] mb-12 leading-relaxed">
-            Watch Umay's AI brain in real time — detecting tripwires, analyzing transcripts, 
-            and making intervention decisions as the conversation unfolds.
+            Umay'ın yapay zekâ beynini gerçek zamanlı izleyin — tetikleyicileri tespit ediyor, 
+            konuşmaları analiz ediyor ve müdahale kararlarını anında veriyor.
           </p>
         </div>
 
@@ -30,14 +30,14 @@ export default function LiveDemoSlide({ onLaunchDemo }: Props) {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[hsl(30,20%,4%)] opacity-40" />
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-[hsl(30,20%,4%,0.6)]" />
               </span>
-              Launch Live Observer
+              Canlı Gözlemciyi Başlat
             </span>
           </button>
         </div>
 
         <div className="animate-slide-in-delay-3 mt-8">
           <p className="text-xs text-[hsl(var(--muted-foreground))] font-mono tracking-wider">
-            SUPABASE REALTIME · LLM-AS-A-JUDGE · ZERO-LATENCY
+            GERÇEK ZAMANLI VERİTABANI · LLM HAKEMİ · SIFIR GECİKME
           </p>
         </div>
       </div>

@@ -3,12 +3,12 @@ import SlideLayout from './SlideLayout';
 export default function ProblemSlide() {
   return (
     <SlideLayout className="bg-gradient-to-br from-[hsl(30,20%,4%)] to-[hsl(30,15%,8%)] flex">
-      {/* Left content */}
+      {/* Sol içerik */}
       <div className="flex-1 flex flex-col justify-center px-16 py-12">
         <div className="animate-slide-in">
-          <p className="text-sm tracking-[0.3em] uppercase text-[hsl(var(--slide-amber))] mb-4">The Problem</p>
+          <p className="text-sm tracking-[0.3em] uppercase text-[hsl(var(--slide-amber))] mb-4">Sorun</p>
           <h2 className="font-display text-5xl font-bold text-[hsl(var(--slide-cream))] leading-tight mb-8">
-            The Biology<br />of Conflict
+            Kavganın<br />Biyolojisi
           </h2>
         </div>
 
@@ -19,10 +19,9 @@ export default function ProblemSlide() {
                 <span className="text-[hsl(var(--slide-sage))] text-sm">⚡</span>
               </div>
               <div>
-                <p className="text-[hsl(var(--slide-cream))] font-medium mb-1">Fight-or-Flight Hijack</p>
+                <p className="text-[hsl(var(--slide-cream))] font-medium mb-1">Savaş ya da Kaç Refleksi</p>
                 <p className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed">
-                  When couples argue, their autonomic nervous systems trigger a fight-or-flight response. 
-                  We interrupt, escalate, and stop listening.
+                  Çiftler tartışırken sinir sistemi devreye girer. Sözünü keseriz, sesi yükseltiriz, dinlemeyi bırakırız.
                 </p>
               </div>
             </div>
@@ -34,10 +33,9 @@ export default function ProblemSlide() {
                 <span className="text-[hsl(var(--slide-amber))] text-sm">🤖</span>
               </div>
               <div>
-                <p className="text-[hsl(var(--slide-cream))] font-medium mb-1">The AI Gap</p>
+                <p className="text-[hsl(var(--slide-cream))] font-medium mb-1">Yapay Zekâ Eksikliği</p>
                 <p className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed">
-                  Standard AI chatbots fail at couples therapy because they are passive text boxes. 
-                  They give advice, but they don't stop the yelling.
+                  Mevcut yapay zekâ sohbet botları pasif metin kutularıdır. Tavsiye verir ama bağırmayı durdurmaz.
                 </p>
               </div>
             </div>
@@ -45,15 +43,13 @@ export default function ProblemSlide() {
         </div>
       </div>
 
-      {/* Right visual */}
+      {/* Sağ görsel */}
       <div className="w-[40%] flex items-center justify-center relative">
         <div className="animate-slide-in-delay-3">
-          {/* Heartbeat / stress visualization */}
           <svg viewBox="0 0 300 300" className="w-64 h-64 opacity-20">
             <circle cx="150" cy="150" r="120" stroke="hsl(0,60%,50%)" fill="none" strokeWidth="0.5" opacity="0.3" />
             <circle cx="150" cy="150" r="90" stroke="hsl(0,60%,50%)" fill="none" strokeWidth="0.5" opacity="0.5" />
             <circle cx="150" cy="150" r="60" stroke="hsl(0,60%,50%)" fill="none" strokeWidth="1" opacity="0.7" />
-            {/* Heartbeat line */}
             <polyline
               points="30,150 100,150 120,100 140,200 160,80 180,150 270,150"
               stroke="hsl(0,70%,55%)"
@@ -64,7 +60,7 @@ export default function ProblemSlide() {
         </div>
         <div className="absolute bottom-16 right-16 animate-slide-in-delay-4">
           <p className="text-xs text-[hsl(var(--muted-foreground))] italic max-w-48">
-            "Relationships don't fail due to a lack of love — they fail due to human biology."
+            "İlişkiler sevgi eksikliğinden değil, insan biyolojisinden yıkılır."
           </p>
         </div>
       </div>

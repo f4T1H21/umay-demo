@@ -10,7 +10,6 @@ export default function TitleSlide() {
                 stroke="hsl(142,25%,45%)" fill="none" strokeWidth="1" />
           <path d="M200 800 C200 600 300 500 300 350 C300 200 200 100 200 0" 
                 stroke="hsl(35,50%,55%)" fill="none" strokeWidth="1" />
-          {/* Branches */}
           <path d="M150 400 C120 380 80 370 60 350" stroke="hsl(142,25%,45%)" fill="none" strokeWidth="0.5" opacity="0.6" />
           <path d="M250 350 C280 330 320 320 340 300" stroke="hsl(142,25%,45%)" fill="none" strokeWidth="0.5" opacity="0.6" />
           <path d="M140 300 C110 280 70 270 50 250" stroke="hsl(35,50%,55%)" fill="none" strokeWidth="0.5" opacity="0.4" />
@@ -29,12 +28,12 @@ export default function TitleSlide() {
         </div>
         <div className="animate-slide-in-delay-2">
           <p className="text-2xl font-light tracking-[0.2em] uppercase text-[hsl(var(--slide-amber))]">
-            Protect your connection
+            Bağınızı Koruyun
           </p>
         </div>
         <div className="animate-slide-in-delay-3 mt-16">
           <p className="text-sm tracking-widest text-[hsl(var(--muted-foreground))] uppercase">
-            Named after the Turkic goddess of compassion & protection
+            Türk mitolojisindeki şefkat ve koruma tanrıçası Umay'dan ilham alındı
           </p>
         </div>
       </div>
