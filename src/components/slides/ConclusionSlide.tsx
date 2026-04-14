@@ -16,7 +16,7 @@ export default function ConclusionSlide() {
 
         <div className="animate-slide-in-delay-2">
           <p className="text-[24px] text-[hsl(var(--slide-muted))] leading-relaxed mb-8">U may heal together.</p>
-          <p className="text-[24px] font-bold text-[hsl(var(--slide-primary))]">Umay</p>
+          <p className="text-[18px] font-bold text-[hsl(var(--slide-primary))]">Umay</p>
         </div>
       </div>
     </SlideLayout>
