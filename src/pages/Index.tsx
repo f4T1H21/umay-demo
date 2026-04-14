@@ -4,10 +4,12 @@ import Slideshow from '@/components/slides/Slideshow';
 import TitleSlide from '@/components/slides/TitleSlide';
 import ProblemSlide from '@/components/slides/ProblemSlide';
 import SolutionSlide from '@/components/slides/SolutionSlide';
-import HowItWorksSlide from '@/components/slides/HowItWorksSlide';
-import AdvancedModeSlide from '@/components/slides/AdvancedModeSlide';
-import ArchitectureSlide from '@/components/slides/ArchitectureSlide';
+import ValuePropSlide from '@/components/slides/ValuePropSlide';
+import MarketSlide from '@/components/slides/MarketSlide';
+import BusinessModelSlide from '@/components/slides/BusinessModelSlide';
+import CompetitionSlide from '@/components/slides/CompetitionSlide';
 import FutureSlide from '@/components/slides/FutureSlide';
+import TeamSlide from '@/components/slides/TeamSlide';
 import LiveDemoSlide from '@/components/slides/LiveDemoSlide';
 import ConclusionSlide from '@/components/slides/ConclusionSlide';
 import LiveTranscript from '@/components/LiveTranscript';
@@ -127,10 +129,10 @@ export default function Index() {
               onClick={() => setView('slideshow')}
               className="font-mono text-[10px] px-2 py-1 rounded bg-zinc-800 text-zinc-500 hover:text-zinc-300 hover:bg-zinc-700 transition-colors mr-3"
             >
-              ← Slides
+              ← Slaytlar
             </button>
             <h1 className="font-sans text-lg font-semibold tracking-tight">
-              Umay Live Process Observer
+              Umay Canlı Süreç Gözlemcisi
             </h1>
             <div className="flex items-center gap-1.5">
               <span className="relative flex h-2 w-2">
@@ -138,12 +140,12 @@ export default function Index() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
               <span className="font-mono text-[10px] text-emerald-500 uppercase tracking-widest">
-                System Online
+                Sistem Aktif
               </span>
             </div>
             {sessionId && (
               <span className="font-mono text-[10px] text-zinc-400 truncate">
-                session: {sessionId}
+                oturum: {sessionId}
               </span>
             )}
           </div>
@@ -170,10 +172,12 @@ export default function Index() {
       <TitleSlide />
       <ProblemSlide />
       <SolutionSlide />
-      <HowItWorksSlide />
-      <AdvancedModeSlide />
-      <ArchitectureSlide />
+      <ValuePropSlide />
+      <MarketSlide />
+      <BusinessModelSlide />
+      <CompetitionSlide />
       <FutureSlide />
+      <TeamSlide />
       <LiveDemoSlide onLaunchDemo={() => setView('observer')} />
       <ConclusionSlide />
     </Slideshow>
