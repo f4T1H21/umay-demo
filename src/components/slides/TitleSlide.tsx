@@ -6,10 +6,10 @@ export default function TitleSlide() {
       <div className="relative z-10 text-center px-16 max-w-5xl">
         <div className="animate-slide-in">
           <h1 className="font-sans text-[40px] font-bold leading-tight text-[hsl(var(--slide-text))]">
-            Bağ Kur, Veriyle İyileş
+            U May Heal Together
           </h1>
           <p className="text-[24px] font-semibold text-[hsl(var(--slide-primary))] mt-2">
-            Yapay Zeka Destekli Diyadik Müdahale Sistemleri
+            Yapay Zeka Destekli Çift Terapisi Arayüzü
           </p>
         </div>
         <div className="animate-slide-in-delay-1">
@@ -21,9 +21,7 @@ export default function TitleSlide() {
           </p>
         </div>
         <div className="animate-slide-in-delay-3 mt-12">
-          <p className="text-sm font-semibold tracking-[0.15em] text-[hsl(var(--slide-accent))] uppercase">
-            Umay
-          </p>
+          <p className="text-sm font-semibold tracking-[0.15em] text-[hsl(var(--slide-accent))] uppercase">Umay</p>
         </div>
       </div>
     </SlideLayout>

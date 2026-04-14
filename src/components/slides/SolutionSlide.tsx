@@ -1,20 +1,20 @@
-import SlideLayout from './SlideLayout';
+import SlideLayout from "./SlideLayout";
 
 const items = [
   {
-    title: 'Bilimsel Temel',
-    desc: 'Sadece bir chatbot değil; EFT (Duygu Odaklı Terapi), Gottman Metodu ve Imago gibi kanıta dayalı yöntemleri algoritmik çerçeveye oturtan bir mimari.',
-    icon: '🔬',
+    title: "Bilimsel Temel",
+    desc: "Bir Chatbot değil; EFT (Duygu Odaklı Terapi), Gottman Metodu ve Imago gibi kanıta dayalı yöntemleri algoritmik çerçeveye oturtan bir mimari.",
+    icon: "🔬",
   },
   {
-    title: 'Dinamik Metodoloji',
-    desc: 'İlişki dinamiğine göre ihtiyacı tespit eden ve o an en uygun terapi biçimini (Örn: Çatışma anında Imago, derinleşme anında EFT) uygulayan Method Orchestrator.',
-    icon: '🎯',
+    title: "Dinamik Metodoloji",
+    desc: "İlişki dinamiğine göre ihtiyacı tespit eden ve o an en uygun terapi biçimini (Çatışma anında Imago, derinleşme anında EFT) uygulayan Method Orchestrator.",
+    icon: "🎯",
   },
   {
-    title: 'Proaktif Takip',
-    desc: 'Sadece kullanıcı geldiğinde değil, push notification\'lar ile duygusal check-in\'ler yapan ve partner bilgilerini proaktif hatırlatan bir refakatçi.',
-    icon: '🔔',
+    title: "Proaktif Takip",
+    desc: "Sadece kullanıcı geldiğinde değil, push notification'lar ile duygusal check-in'ler yapan ve partner bilgilerini proaktif hatırlatan bir refakatçi.",
+    icon: "🔔",
   },
 ];
 
@@ -23,7 +23,9 @@ export default function SolutionSlide() {
     <SlideLayout className="bg-gradient-to-br from-[hsl(220,20%,6%)] to-[hsl(210,20%,10%)] flex items-center">
       <div className="w-full px-16 py-12">
         <div className="animate-slide-in mb-10">
-          <p className="text-sm tracking-[0.2em] uppercase text-[hsl(var(--slide-primary))] font-semibold mb-3">Çözüm</p>
+          <p className="text-sm tracking-[0.2em] uppercase text-[hsl(var(--slide-primary))] font-semibold mb-3">
+            Çözüm
+          </p>
           <h2 className="font-sans text-[36px] font-bold text-[hsl(var(--slide-text))] leading-tight">
             Klinik Uzmanlık Dijital Arayüzle Buluşuyor
           </h2>

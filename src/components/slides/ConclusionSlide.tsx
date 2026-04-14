@@ -1,4 +1,4 @@
-import SlideLayout from './SlideLayout';
+import SlideLayout from "./SlideLayout";
 
 export default function ConclusionSlide() {
   return (
@@ -15,12 +15,8 @@ export default function ConclusionSlide() {
         </div>
 
         <div className="animate-slide-in-delay-2">
-          <p className="text-[20px] text-[hsl(var(--slide-muted))] leading-relaxed mb-8">
-            Çatışma doğaldır. Yıkım bir tercihtir.
-          </p>
-          <p className="text-[18px] text-[hsl(var(--slide-muted))]">
-            Umay, şefkatin özünü koruyan yapay zekâ güvenli alanıdır.
-          </p>
+          <p className="text-[20px] text-[hsl(var(--slide-muted))] leading-relaxed mb-8">U may heal together.</p>
+          <p className="text-[18px] text-[hsl(var(--slide-muted))]">Umay</p>
         </div>
 
         <div className="animate-slide-in-delay-3 mt-12">

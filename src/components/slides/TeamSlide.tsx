@@ -1,25 +1,25 @@
-import SlideLayout from './SlideLayout';
+import SlideLayout from "./SlideLayout";
 
 const team = [
   {
-    name: 'Ahmet Ekiz',
-    role: 'AI Mimari & Geliştirme',
-    icon: '👨‍💻',
+    name: "Ahmet Ekiz",
+    role: "AI Mimari & Geliştirme",
+    icon: "🛠️",
   },
   {
-    name: 'Şefik Efe Altınoluk',
-    role: 'Ürün Tasarımı & Strateji',
-    icon: '🎨',
+    name: "Şefik Efe Altınoluk",
+    role: "Ürün Tasarımı & Strateji",
+    icon: "♟️",
   },
   {
-    name: 'Sabancı Üniversitesi',
-    role: 'Akademik Partner — Psikoloji Laboratuvarı',
-    icon: '🏛️',
+    name: "Prof. Dr. Nebi Sümer",
+    role: "Danışman — İlişki ve Bağlanma Psikolojisi Uzmanı",
+    icon: "📚",
   },
   {
-    name: 'Prof. Dr. Nebi Sümer',
-    role: 'Danışman — İlişki ve Bağlanma Psikolojisi Uzmanı',
-    icon: '📚',
+    name: "Sabancı Üniversitesi",
+    role: "Akademik Partner — Psikoloji Laboratuvarı",
+    icon: "🏛️",
   },
 ];
 
