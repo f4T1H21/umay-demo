@@ -1,68 +1,47 @@
-import SlideLayout from "./SlideLayout";
+import SlideLayout from './SlideLayout';
+
+const problems = [
+  {
+    title: 'Maliyet Bariyeri',
+    desc: 'Seans başı 150–250$ arası maliyetler, toplumun büyük kesimi için sürdürülebilir değil.',
+    icon: '💰',
+  },
+  {
+    title: 'Erişim Kısıtı',
+    desc: 'Sadece randevu saatlerine sıkışmış müdahaleler; kriz anlarında (gece yarısı tartışmalarında) destek eksikliği.',
+    icon: '🕐',
+  },
+  {
+    title: 'Hafıza Kaybı',
+    desc: 'Terapist değişiminde her şeye sıfırdan başlama zorunluluğu. 5–10 yıllık ilişkisel verinin ve paternlerin dijital bir bellekte tutulamaması.',
+    icon: '🧠',
+  },
+];
 
 export default function ProblemSlide() {
   return (
-    <SlideLayout className="bg-gradient-to-br from-[hsl(30,20%,4%)] to-[hsl(30,15%,8%)] flex">
-      {/* Sol içerik */}
-      <div className="flex-1 flex flex-col justify-center px-16 py-12">
-        <div className="animate-slide-in">
-          <p className="text-sm tracking-[0.3em] uppercase text-[hsl(var(--slide-amber))] mb-4">Sorun</p>
-          <h2 className="font-display text-5xl font-bold text-[hsl(var(--slide-cream))] leading-tight mb-8">
-            Erişilemez Çift Terapisi
+    <SlideLayout className="bg-gradient-to-br from-[hsl(220,20%,6%)] to-[hsl(220,15%,10%)] flex items-center">
+      <div className="w-full px-16 py-12">
+        <div className="animate-slide-in mb-10">
+          <p className="text-sm tracking-[0.2em] uppercase text-[hsl(var(--slide-accent))] font-semibold mb-3">Problem</p>
+          <h2 className="font-sans text-[36px] font-bold text-[hsl(var(--slide-text))] leading-tight">
+            Ulaşılamaz İlişki Terapisi
           </h2>
         </div>
 
-        <div className="space-y-6 max-w-lg">
-          <div className="animate-slide-in-delay-1">
-            <div className="flex items-start gap-4">
-              <div className="w-8 h-8 rounded-full bg-[hsl(var(--slide-sage)/0.15)] flex items-center justify-center flex-shrink-0 mt-1">
-                <span className="text-[hsl(var(--slide-sage))] text-sm">⚡</span>
-              </div>
+        <div className="space-y-5">
+          {problems.map(({ title, desc, icon }, i) => (
+            <div
+              key={title}
+              className={`animate-slide-in-delay-${i + 1} flex items-start gap-5 p-5 rounded-xl bg-[hsl(var(--slide-card))] border border-[hsl(var(--border))]`}
+            >
+              <span className="text-2xl mt-0.5">{icon}</span>
               <div>
-                <p className="text-[hsl(var(--slide-cream))] font-medium mb-1">Savaş ya da Kaç Refleksi</p>
-                <p className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed">
-                  Çiftler tartışırken sinir sistemi devreye girer. Sözünü keseriz, sesi yükseltiriz, dinlemeyi
-                  bırakırız.
-                </p>
+                <p className="text-[20px] font-semibold text-[hsl(var(--slide-text))] mb-1">{title}</p>
+                <p className="text-[16px] text-[hsl(var(--slide-muted))] leading-relaxed">{desc}</p>
               </div>
             </div>
-          </div>
-
-          <div className="animate-slide-in-delay-2">
-            <div className="flex items-start gap-4">
-              <div className="w-8 h-8 rounded-full bg-[hsl(var(--slide-amber)/0.15)] flex items-center justify-center flex-shrink-0 mt-1">
-                <span className="text-[hsl(var(--slide-amber))] text-sm">🤖</span>
-              </div>
-              <div>
-                <p className="text-[hsl(var(--slide-cream))] font-medium mb-1">Yapay Zekâ Eksikliği</p>
-                <p className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed">
-                  Mevcut yapay zekâ sohbet botları pasif metin kutularıdır. Tavsiye verir ama bağırmayı durdurmaz.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Sağ görsel */}
-      <div className="w-[40%] flex items-center justify-center relative">
-        <div className="animate-slide-in-delay-3">
-          <svg viewBox="0 0 300 300" className="w-64 h-64 opacity-20">
-            <circle cx="150" cy="150" r="120" stroke="hsl(0,60%,50%)" fill="none" strokeWidth="0.5" opacity="0.3" />
-            <circle cx="150" cy="150" r="90" stroke="hsl(0,60%,50%)" fill="none" strokeWidth="0.5" opacity="0.5" />
-            <circle cx="150" cy="150" r="60" stroke="hsl(0,60%,50%)" fill="none" strokeWidth="1" opacity="0.7" />
-            <polyline
-              points="30,150 100,150 120,100 140,200 160,80 180,150 270,150"
-              stroke="hsl(0,70%,55%)"
-              fill="none"
-              strokeWidth="2"
-            />
-          </svg>
-        </div>
-        <div className="absolute bottom-16 right-16 animate-slide-in-delay-4">
-          <p className="text-xs text-[hsl(var(--muted-foreground))] italic max-w-48">
-            "İlişkiler sevgi eksikliğinden değil, insan biyolojisinden yıkılır."
-          </p>
+          ))}
         </div>
       </div>
     </SlideLayout>
