@@ -1,32 +1,80 @@
 
 
-## Umay Live Process Observer Dashboard
+## Plan: Tema Güncellemesi & İçerik Yeniden Yapılandırma
 
-### Step 1: Create manual Supabase client
-Create `src/lib/supabase.ts` with `createClient` pointing at the external Supabase project (URL and anon key provided). Do NOT use the built-in Lovable Cloud client.
+Mevcut 9 slayt → 11 slayta genişletilecek. Tema, okunabilirliğe odaklı olarak yeniden tasarlanacak. Cormorant Garamond (serif) kaldırılıp, tüm fontlar Inter/Roboto sans-serif ile değiştirilecek.
 
-### Step 2: Create the database table
-Run a migration to create `therapy_logs` with columns: `id` (uuid PK), `session_id` (text), `speaker` (text), `raw_transcript` (text), `ai_analysis` (jsonb), `created_at` (timestamptz). Enable realtime via `ALTER PUBLICATION`. Add RLS policies allowing authenticated users to read/insert — and also allow anon access since this is a hackathon demo with no auth.
+### Tema Değişiklikleri
 
-### Step 3: Build dashboard components
+**`src/index.css`:**
+- Google Fonts: Cormorant Garamond kaldır, sadece Inter kalsın (veya Roboto ekle)
+- `.slide-content h1, h2` kuralından serif font kaldır — tüm slide içeriği `Inter` sans-serif
+- Font boyutları: Başlıklar 32-40px aralığı, alt başlıklar 24px, body text 18-20px
+- Arka plan kontrastını artır: daha açık metin renkleri, daha belirgin vurgular
 
-**Files to create:**
-- `src/components/LiveTranscript.tsx` — scrollable transcript feed, color-coded by speaker (white/gray-blue/amber), auto-scroll
-- `src/components/TripwireMeters.tsx` — 4 animated progress bars (Loop, Missed Drop, Escalation, Stonewall) with red glow on "interrupt"
-- `src/components/JsonTerminal.tsx` — character-by-character typing animation of `chain_of_thought_scratchpad`, auto-scroll
-- `src/components/SimulateButton.tsx` — inserts dummy data cycling through speakers/tripwires
+**`src/components/slides/SlideLayout.tsx`:**
+- Değişiklik yok, wrapper olarak kalacak
 
-**Update `src/pages/Index.tsx`:**
-- Full-viewport CSS grid: header + left column (transcript) + right column (telemetry)
-- Ultra-dark `bg-zinc-950` theme, `font-mono` for data, `font-sans` for headers
-- Header with "Umay Live Process Observer", pulsing green dot, "System Online"
-- Supabase realtime subscription on `therapy_logs` INSERT events → append to state
-- Wire up all child components
+### Slayt İçerik Değişiklikleri (11 slayt)
 
-### Technical details
-- Realtime subscription via `supabase.channel('therapy_logs').on('postgres_changes', ...)` 
-- Typing animation uses `setInterval` stepping through scratchpad characters
-- Progress bars use Tailwind transitions + conditional red glow (`shadow-red-500/50`)
-- Auto-scroll via `useEffect` + `scrollIntoView` on refs
-- Mock data cycles through 4 tripwires and 3 speakers with realistic text
+**1. `TitleSlide.tsx` — Kapak (yeniden yaz)**
+- Başlık: "Bağ Kur, Veriyle İyileş: Yapay Zeka Destekli Diyadik Müdahale Sistemleri"
+- Tagline: "Uzun süreli ilişkilerde erişilebilir, bilimsel ve veri odaklı dijital terapi mimarisi."
+- SVG ağaç kalsın ama daha subtle
+
+**2. `ProblemSlide.tsx` — Problem (yeniden yaz)**
+- Başlık: "Ulaşılamaz İlişki Terapisi"
+- 3 madde: Maliyet Bariyeri, Erişim Kısıtı, Hafıza Kaybı
+- Açıklamalarla birlikte
+
+**3. `SolutionSlide.tsx` — Çözüm I (yeniden yaz)**
+- Başlık: "Klinik Uzmanlık Dijital Arayüzle Buluşuyor"
+- 3 madde: Bilimsel Temel, Dinamik Metodoloji, Proaktif Takip
+
+**4. Yeni: `ValuePropSlide.tsx` — Çözüm II / Değer Önerisi**
+- Başlık: "Neden Biz?"
+- 3 madde: Uygun Fiyat (20$/ay), 7/24 Erişilebilirlik, Kümülatif İlişki Belleği
+
+**5. Yeni: `MarketSlide.tsx` — Pazar Analizi**
+- Başlık: "Dijital Sağlıkta Yeni Sınır: İlişki Terapisi"
+- 3 madde: Pazar Büyüklüğü (12B$), Dijitalleşme Fırsatı, Oyuncu Değerlemeleri
+
+**6. Yeni: `BusinessModelSlide.tsx` — İş Modeli**
+- Başlık: "Gelir Kanalları"
+- 3 madde: B2C Abonelik (30$/ay), Akademik Veri Servisi, Klinik Test Platformu
+
+**7. Yeni: `CompetitionSlide.tsx` — Rekabet**
+- Karşılaştırma tablosu: Geleneksel Terapi vs Standart Uygulamalar vs Bizim Çözümümüz
+- Satırlar: Maliyet, Erişim, Veri Analizi, Metot Çeşitliliği
+
+**8. `FutureSlide.tsx` → Roadmap olarak yeniden yaz**
+- Başlık: "Gelecek 6 Ay"
+- 3 madde: Method Orchestrator, Giyilebilir Cihaz Entegrasyonu, Partner Dijital İkizi
+
+**9. Yeni: `TeamSlide.tsx` — Ekip**
+- Ahmet Ekiz, Şefik Efe Altınoluk, Akademik Partner, Danışman bilgileri
+
+**10. `LiveDemoSlide.tsx` — Demo (güncelle)**
+- Başlık: "Canlı Uygulama Demosu"
+- Alt metin: "Imago ve Freestyle Terapi Seansları"
+- "Live Session: Ahmet ve Ayşe'nin simüle edilmiş diyaloğu"
+- Canlı Gözlemci butonu
+
+**11. `ConclusionSlide.tsx` — Kapanış (güncelle)**
+- "Sorular ve Teşekkürler"
+
+### Kaldırılacak Slaytlar
+- `HowItWorksSlide.tsx` (Imago Mode detayları) — içerik Çözüm I'e entegre edildi
+- `AdvancedModeSlide.tsx` (Tripwires) — kaldırılacak
+- `ArchitectureSlide.tsx` — kaldırılacak
+
+### `src/pages/Index.tsx` Güncelleme
+- Eski slayt importlarını kaldır, yeni slaytları ekle
+- Slideshow children sırasını 11 slayta güncelle
+
+### Teknik Detaylar
+- Tüm slaytlarda `font-display` class'ı kaldırılacak, başlıklar `font-sans font-bold text-[32px]` veya `text-[40px]` olacak
+- Body text `text-[18px]` veya `text-[20px]`
+- Muted renkleri daha açık yapılacak (okunabilirlik)
+- Gradient arka planlar korunacak ama metin kontrastı artırılacak
 
