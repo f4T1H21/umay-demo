@@ -12,6 +12,14 @@ export default function Slideshow({ children, onExitPresentation }: Props) {
   const next = useCallback(() => setCurrent((c) => Math.min(c + 1, total - 1)), [total]);
   const prev = useCallback(() => setCurrent((c) => Math.max(c - 1, 0)), [total]);
 
+  const toggleFullscreen = useCallback(() => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(() => {});
+    } else {
+      document.exitFullscreen().catch(() => {});
+    }
+  }, []);
+
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
@@ -22,13 +30,19 @@ export default function Slideshow({ children, onExitPresentation }: Props) {
         e.preventDefault();
         prev();
       }
+      if (e.key === 'F5') {
+        e.preventDefault();
+        toggleFullscreen();
+      }
       if (e.key === 'Escape' && onExitPresentation) {
-        onExitPresentation();
+        if (!document.fullscreenElement) {
+          onExitPresentation();
+        }
       }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [next, prev, onExitPresentation]);
+  }, [next, prev, onExitPresentation, toggleFullscreen]);
 
   return (
     <div className="w-full h-screen bg-[hsl(30,20%,4%)] relative overflow-hidden select-none">
@@ -61,7 +75,7 @@ export default function Slideshow({ children, onExitPresentation }: Props) {
           {current + 1} / {total}
         </p>
 
-        {/* Nav arrows */}
+        {/* Nav arrows & fullscreen */}
         <div className="flex items-center gap-2">
           <button
             onClick={prev}
@@ -76,6 +90,13 @@ export default function Slideshow({ children, onExitPresentation }: Props) {
             className="px-3 py-1 rounded text-xs text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--slide-cream))] disabled:opacity-20 transition-colors"
           >
             →
+          </button>
+          <button
+            onClick={toggleFullscreen}
+            className="px-3 py-1 rounded text-xs text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--slide-cream))] transition-colors ml-2"
+            title="Fullscreen (F5)"
+          >
+            ⛶
           </button>
         </div>
       </div>
