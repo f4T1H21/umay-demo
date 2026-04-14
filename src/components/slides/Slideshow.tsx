@@ -12,6 +12,14 @@ export default function Slideshow({ children, onExitPresentation }: Props) {
   const next = useCallback(() => setCurrent((c) => Math.min(c + 1, total - 1)), [total]);
   const prev = useCallback(() => setCurrent((c) => Math.max(c - 1, 0)), [total]);
 
+  const toggleFullscreen = useCallback(() => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(() => {});
+    } else {
+      document.exitFullscreen().catch(() => {});
+    }
+  }, []);
+
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
@@ -22,13 +30,19 @@ export default function Slideshow({ children, onExitPresentation }: Props) {
         e.preventDefault();
         prev();
       }
+      if (e.key === 'F5') {
+        e.preventDefault();
+        toggleFullscreen();
+      }
       if (e.key === 'Escape' && onExitPresentation) {
-        onExitPresentation();
+        if (!document.fullscreenElement) {
+          onExitPresentation();
+        }
       }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [next, prev, onExitPresentation]);
+  }, [next, prev, onExitPresentation, toggleFullscreen]);
 
   return (
     <div className="w-full h-screen bg-[hsl(30,20%,4%)] relative overflow-hidden select-none">
