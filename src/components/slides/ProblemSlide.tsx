@@ -1,4 +1,4 @@
-import SlideLayout from './SlideLayout';
+import SlideLayout from "./SlideLayout";
 
 export default function ProblemSlide() {
   return (
@@ -8,7 +8,7 @@ export default function ProblemSlide() {
         <div className="animate-slide-in">
           <p className="text-sm tracking-[0.3em] uppercase text-[hsl(var(--slide-amber))] mb-4">Sorun</p>
           <h2 className="font-display text-5xl font-bold text-[hsl(var(--slide-cream))] leading-tight mb-8">
-            Kavganın<br />Biyolojisi
+            Erişilemez Çift Terapisi
           </h2>
         </div>
 
@@ -21,7 +21,8 @@ export default function ProblemSlide() {
               <div>
                 <p className="text-[hsl(var(--slide-cream))] font-medium mb-1">Savaş ya da Kaç Refleksi</p>
                 <p className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed">
-                  Çiftler tartışırken sinir sistemi devreye girer. Sözünü keseriz, sesi yükseltiriz, dinlemeyi bırakırız.
+                  Çiftler tartışırken sinir sistemi devreye girer. Sözünü keseriz, sesi yükseltiriz, dinlemeyi
+                  bırakırız.
                 </p>
               </div>
             </div>
